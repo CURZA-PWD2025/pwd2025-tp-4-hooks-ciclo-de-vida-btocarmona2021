@@ -53,10 +53,10 @@ onUpdated(() => {
       </form>
     </div>
 
-    <div
+    <div 
       v-for="(tarea, index) in tareas"
       :key="index"
-      class="tareas"
+      class="tareas animate__animated animate__fadeInLeft animate__duration-1s"
       :style="{ backgroundColor: tarea.color }"
     >
       <label class="tarea">{{ tarea.tarea }}</label>
@@ -140,6 +140,7 @@ onUpdated(() => {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 0 3px 1px whitesmoke;
+   animation-duration: 0.3s
 }
 
 .tarea {

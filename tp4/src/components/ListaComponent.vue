@@ -15,7 +15,7 @@ onMounted(() => {
 
 <template>
 <div>
-  <div v-if="listaProfesiones.length != 0" class="tabla-contenedor">
+  <div v-if="listaProfesiones.length != 0" class="tabla-contenedor animate__animated animate__flipInX">
     <table >
       <caption>Listado de Profesiones</caption>
       <thead>
@@ -36,6 +36,7 @@ onMounted(() => {
   </div>
   <div v-else class="loading-container">
     <img class="cargando" src="/loading.gif" alt="">
+    Cargando Datos...
   </div>
 </div>
 </template>

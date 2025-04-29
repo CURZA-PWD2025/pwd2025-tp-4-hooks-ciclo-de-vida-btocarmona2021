@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
 import ListaComponent from "@/components/ListaComponent.vue";
 import TareasComponent from "./components/TareasComponent.vue";
 import DimensionComponent from "./components/DimensionComponent.vue";
@@ -7,12 +6,13 @@ import AlertasComponent from "./components/AlertasComponent.vue";
 import { ref } from "vue";
 
 const componentes = { ListaComponent, TareasComponent, DimensionComponent };
-
+const indice = ref();
 const componenteActual = ref(AlertasComponent);
 
 const change = (componente: any) => {
   componenteActual.value = componente;
 };
+
 </script>
 
 <template>
@@ -24,12 +24,17 @@ const change = (componente: any) => {
         class="boton"
         @click="change(comp)"
       >
-        {{ nombre}}
+        {{ nombre.replace('Component' , '') }}
       </button>
     </div>
 
     <div class="componente-contenedor">
-      <component :is="componenteActual"></component>
+      <transition
+        mode="out-in"
+        enter-active-class="animate__animated animate__flipInY"
+      >
+        <component :is="componenteActual"></component>
+      </transition>
     </div>
   </div>
 </template>
@@ -37,16 +42,17 @@ const change = (componente: any) => {
 <style scoped>
 @import url(https://fonts.googleapis.com/css?family=Chakra+Petch:300,300italic,regular,italic,500,500italic,600,600italic,700,700italic);
 
-body{
-  
+.animate__animated{
+ --animate-duration: 0.5s;
 }
+
 
 .contenedor-principal {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  font-family: chakra petch,sans-serif;
+  font-family: chakra petch, sans-serif;
 }
 
 .botonera {
