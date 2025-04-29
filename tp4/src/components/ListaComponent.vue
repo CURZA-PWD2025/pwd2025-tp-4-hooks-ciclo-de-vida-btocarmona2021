@@ -2,20 +2,32 @@
 import { ref, onMounted } from 'vue';
 import { profesiones } from "../data/profesiones";
 import type { Profesion } from '@/interface/profesion';
+import AlertasComponent from './AlertasComponent.vue';
 
 const listaProfesiones = ref<Profesion[]>([]);
+const alerta = ref(false)
 
 onMounted(() => {
 
   setTimeout(() => {
+    alerta.value=true,
     listaProfesiones.value = profesiones;
+    setTimeout(() => {
+      alerta.value = false;
+    },2000)
   }, 3000);
 });
+
 </script>
 
 <template>
 <div>
   <div v-if="listaProfesiones.length != 0" class="tabla-contenedor animate__animated animate__flipInX">
+
+      <AlertasComponent v-if="alerta">
+        <h1>Lista cargada con exito</h1>
+      </AlertasComponent>
+
     <table >
       <caption>Listado de Profesiones</caption>
       <thead>
@@ -42,6 +54,7 @@ onMounted(() => {
 </template>
 
 <style scoped>
+
 .tabla-contenedor {
   margin: 2rem auto;
   padding: 1rem;
@@ -90,7 +103,7 @@ tbody tr:last-child td {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 200px; /* Altura mínima para centrar verticalmente */
+  min-height: 200px;
 }
 
 </style>

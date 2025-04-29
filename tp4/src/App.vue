@@ -33,7 +33,9 @@ const change = (componente: any) => {
         mode="out-in"
         enter-active-class="animate__animated animate__flipInY"
       >
-        <component :is="componenteActual"></component>
+        <component :is="componenteActual">
+        <h1>Bienvenidos</h1>
+        </component>
       </transition>
     </div>
   </div>
@@ -46,7 +48,9 @@ const change = (componente: any) => {
  --animate-duration: 0.5s;
 }
 
-
+h1{
+  color: wheat;
+}
 .contenedor-principal {
   display: flex;
   flex-direction: column;
@@ -78,7 +82,7 @@ const change = (componente: any) => {
   background-color: #0056b3;
 }
 
-/* Contenedor de componente cargado */
+
 .componente-contenedor {
   width: 100%;
   padding: 20px;

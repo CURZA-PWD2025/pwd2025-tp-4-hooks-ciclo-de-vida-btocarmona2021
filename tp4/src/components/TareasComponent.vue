@@ -9,7 +9,7 @@ const tareasanteriores = ref<Tarea[]>([]);
 const nueva = ref("");
 
 const nuevaTarea = () => {
-  if (!nueva.value.trim()) return; // Evita agregar tareas vacías
+  if (!nueva.value.trim()) return;
   const tarea: Tarea = {
     id: tareas.value.length + 1,
     tarea: nueva.value,
