@@ -3,7 +3,7 @@
 # Trabajo Práctico N° 4: Ciclo de vida de un componente
 
 En este trabajo vamos a repasar los temas vistos en la clase sobre el ciclo de vida de un componente.  
-Debemos crear un componente llamado `Alertas`.
+
 
 ## Componente Lista
 Crear un componente llamado `Lista` que renderice una lista de elementos (provista en la carpeta `resources`).  
