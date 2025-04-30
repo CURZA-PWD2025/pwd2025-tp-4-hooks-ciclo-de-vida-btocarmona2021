@@ -1,8 +1,9 @@
+[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/IOxRa_w9)
 
 # Trabajo Práctico N° 4: Ciclo de vida de un componente
 
 En este trabajo vamos a repasar los temas vistos en la clase sobre el ciclo de vida de un componente.  
-Debemos crear un componente llamado `Alertas`.
+
 
 ## Componente Lista
 Crear un componente llamado `Lista` que renderice una lista de elementos (provista en la carpeta `resources`).  
