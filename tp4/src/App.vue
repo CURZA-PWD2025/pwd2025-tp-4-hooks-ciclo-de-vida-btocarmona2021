@@ -6,12 +6,7 @@ import AlertasComponent from "./components/AlertasComponent.vue";
 import { ref } from "vue";
 
 const componentes = { ListaComponent, TareasComponent, DimensionComponent };
-const indice = ref();
 const componenteActual = ref(AlertasComponent);
-
-const change = (componente: any) => {
-  componenteActual.value = componente;
-};
 
 </script>
 
@@ -22,7 +17,7 @@ const change = (componente: any) => {
         v-for="(comp, nombre) in componentes"
         :key="nombre"
         class="boton"
-        @click="change(comp)"
+        @click="componenteActual = comp"
       >
         {{ nombre.replace('Component' , '') }}
       </button>
