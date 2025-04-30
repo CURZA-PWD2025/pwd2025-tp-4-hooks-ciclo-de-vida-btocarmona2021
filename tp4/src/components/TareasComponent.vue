@@ -4,7 +4,6 @@ import { onBeforeUpdate, onUpdated, ref } from "vue";
 import { Icon } from "@iconify/vue";
 
 const tareas = ref<Tarea[]>([]);
-const tareasanteriores = ref<Tarea[]>([]);
 
 const nueva = ref("");
 
